@@ -1,0 +1,104 @@
+{
+	"variables": [],
+	"info": {
+		"name": "demo-rest",
+		"_postman_id": "7f4cc242-d66c-07d7-1f0b-66b4d0806eef",
+		"description": "Demo rest tests collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://{{host}}/demo (get 5 sorted values)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"Response constains a sorted array\"] = (data[0] < data[1]) && (data[1] < data[2]) && (data[2] < data[3]) && (data[3] < data[4]);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{host}}/demo",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Simple get operation request"
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{host}}/demo (elements > 0)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"Response is 722\"] = data==722;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{host}}/demo",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    28,\n    115,\n    151,\n    210,\n    218\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{host}}/demo (elements = 0)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"Response is 0\"] = data===0;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{host}}/demo",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[]"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

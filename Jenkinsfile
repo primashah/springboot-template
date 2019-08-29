@@ -1,4 +1,4 @@
-@Library('pipelines') _
+@Library('pipelines@ocp4') _
 
 javaFullPipeline(
   appName: params.APP_NAME, 

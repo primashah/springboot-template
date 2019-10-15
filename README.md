@@ -51,14 +51,14 @@ For develop
 ```
 oc new-build <repo#develop> --strategy=pipeline --name=springboot-develop --source-secret=<secret> --build-secret=<secret> -n <jenkinsProject>
 
-oc env bc/springboot-develop APP_NAME=springboot GIT_BRANCH="develop" GIT_CREDENTIALS=<credentials> GIT_URL=<repo> BUILD_PROJECT=<dev-project> BASE_IMAGE=redhat-openjdk8-openshift:1.2 BUILD_TAG='latest' DEPLOY_TAG='dev' STRATEGY='postman' -n <jenkinsProject>
+oc set env bc/springboot-develop APP_NAME=springboot GIT_BRANCH="develop" GIT_CREDENTIALS=<credentials> GIT_URL=<repo> BUILD_PROJECT=<dev-project> BASE_IMAGE=redhat-openjdk8-openshift:1.2 BUILD_TAG='latest' DEPLOY_TAG='dev' STRATEGY='postman' -n <jenkinsProject>
 ```
 
 For master
 ```
 oc new-build <repo> --strategy=pipeline --name=springboot-master --source-secret=<secret> --build-secret=<secret> -n <jenkinsProject>
 
-oc env bc/springboot-develop APP_NAME=springboot GIT_BRANCH="master" GIT_CREDENTIALS=<credentials> GIT_URL=<repo> BUILD_PROJECT=<test-project> BASE_IMAGE=redhat-openjdk8-openshift:1.2 BUILD_TAG='latest' UAT_PROJECT=<uat-project> PROD_PROJECT=<prod-project> DEPLOY_TAG='test' STRATEGY='postman' -n <jenkinsProject>
+oc set env bc/springboot-develop APP_NAME=springboot GIT_BRANCH="master" GIT_CREDENTIALS=<credentials> GIT_URL=<repo> BUILD_PROJECT=<test-project> BASE_IMAGE=redhat-openjdk8-openshift:1.2 BUILD_TAG='latest' UAT_PROJECT=<uat-project> PROD_PROJECT=<prod-project> DEPLOY_TAG='test' STRATEGY='postman' -n <jenkinsProject>
 ```
 
 

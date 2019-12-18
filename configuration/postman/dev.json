@@ -3,7 +3,7 @@
   "name": "dev",
   "values": [{
     "key": "host",
-    "value": "springboot-cicd.apps.na311.openshift.opentlc.com",
+    "value": "springboot-dev.apps.na311.openshift.opentlc.com",
     "description": "",
     "type": "text",
     "enabled": true

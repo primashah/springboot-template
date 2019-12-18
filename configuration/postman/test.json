@@ -3,7 +3,7 @@
   "name": "test",
   "values": [{
     "key": "host",
-    "value": "springboot-misanchez-test.apps.na39.openshift.opentlc.com",
+    "value": "springboot-cicd.apps.na311.openshift.opentlc.com",
     "description": "",
     "type": "text",
     "enabled": true

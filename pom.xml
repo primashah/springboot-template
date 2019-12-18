@@ -34,16 +34,16 @@
         <tag></tag>
     </scm>
     
-    <!-- <distributionManagement>
+    <distributionManagement>
         <snapshotRepository>
             <id>nexus-snapshots</id>
-            <url>http://nexus3-misanche-nexus.apps.na39.openshift.opentlc.com/repository/maven-snapshots</url>
+            <url>http://nexus-cicd.apps.na311.openshift.opentlc.com/content/repositories/snapshots/</url>
         </snapshotRepository>
         <repository>
             <id>nexus-releases</id>
-            <url>http://nexus3-misanche-nexus.apps.na39.openshift.opentlc.com/repository/maven-releases</url>
+            <url>http://nexus-cicd.apps.na311.openshift.opentlc.com/content/repositories/releases/</url>
         </repository>
-    </distributionManagement> -->
+    </distributionManagement>
     
     <dependencies>
         <dependency>
